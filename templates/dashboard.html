@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard</title>
+<style>
+body{margin:0;background:#0f172a;color:#e5e7eb;font-family:system-ui}
+.header{padding:20px;font-size:20px;font-weight:bold}
+.card{background:#020617;margin:20px;padding:20px;border-radius:12px}
+.note{padding:10px;border-bottom:1px solid #1e293b}
+input,button{margin-top:10px}
+button{background:#38bdf8;border:none;padding:10px;border-radius:8px;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div class="header">BudiLab Dashboard</div>
+
+<div class="card">
+<h3>Your Notes</h3>
+{% for n in notes %}
+<div class="note">{{n.content}}</div>
+{% endfor %}
+</div>
+
+<div class="card">
+<h3>Upload File</h3>
+<form action="/upload" method="post" enctype="multipart/form-data">
+<input type="file" name="file">
+<button>Upload</button>
+</form>
+</div>
+
+</body>
+</html>
+

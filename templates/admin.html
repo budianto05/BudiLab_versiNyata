@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Panel</title>
+<style>
+body{margin:0;background:#0f172a;color:#e5e7eb;font-family:system-ui}
+.container{padding:20px}
+.card{background:#020617;padding:20px;border-radius:12px;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Admin Panel</h2>
+{% for u in users %}
+<div class="card">
+<b>{{u.username}}</b> — {{u.role}}
+</div>
+{% endfor %}
+</div>
+</body>
+</html>
+
